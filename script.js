@@ -1,11 +1,18 @@
 function clock(){
-            const currentTime = new Date();
-            d = Date.day
-            document.getElementById("timePara").innerHTML = currentTime;
+            const currentTime = new Date().toLocaleTimeString();
+            const currentDate = new Date().toLocaleDateString();
+            const month = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec"];
+
+            const d = new Date();
+            let name = month[d.getMonth()];
+            //const month = new Date.toLocaleDateString('default', { month: 'long' });
+            document.getElementById("dateDay").innerText = currentDate;
+            document.getElementById("dateName").innerText = name;
+            document.getElementById("dateTime").innerText = currentTime;
             setTimeout(clock, 1000);
           }
 
-dragElement(document.getElementById("window"));
+dragElement(document.querySelector(".window"));
 
 // Step 1: Define a function called `dragElement` that makes an HTML element draggable.
 function dragElement(element) {
@@ -16,10 +23,10 @@ function dragElement(element) {
   var currentY = 0;
 
   // Step 3: Check if there is a special header element associated with the draggable element.
-  if (document.getElementById(element.id + "header")) {
+  if (document.querySelector(".windowheader")) {
     // Step 4: If present, assign the `dragMouseDown` function to the header's `onmousedown` event.
     // This allows you to drag the window around by its header.
-    document.getElementById(element.id + "header").onmousedown = startDragging;
+    document.querySelector(".windowheader").onmousedown = startDragging;
   } else {
     // Step 5: If not present, assign the function directly to the draggable element's `onmousedown` event.
     // This allows you to drag the window by holding down anywhere on the window.
@@ -59,9 +66,6 @@ function dragElement(element) {
   }
 }
 
-
-var welcomeScreen = document.querySelector(".welcome")
-
 function closeWindow(element) {
   element.style.display = "none"
 }
@@ -70,8 +74,29 @@ function openWindow(element) {
   element.style.display = "flex"
 }
 
+// function initWindow(elementName){
+//   var screen = document.querySelector("#"+elementName)
+//   document.getElementById(elementName+"close").addEventListener("click", function(){
+//   closeWindow(screen);
+// });
+
+// }
+// initWindow(photo)
+
+// function test(elem){
+//   thing = document.getElementById(elem);
+//   thing.addEventListener("click", function(){
+//     thing.innerText = "works";
+//   });
+// }
+
+// test(hello);
+var welcomeScreen = document.querySelector("#welcome")
+
+
 var welcomeScreenClose = document.querySelector("#welcomeclose")
 var welcomeScreenOpen = document.querySelector("#welcomeopen")
+// var welcomeScreenOpen = document.querySelectorAll()
 
 welcomeScreenClose.addEventListener("click", function(){
   closeWindow(welcomeScreen);
@@ -80,3 +105,54 @@ welcomeScreenClose.addEventListener("click", function(){
 welcomeScreenOpen.addEventListener("click", function(){
   openWindow(welcomeScreen);
 });
+
+
+
+Array.prototype.forEach.call(
+    document.getElementsByClassName("upload-image"),
+    function(fileElement) {
+        var previewElement = document.createElement("img");
+        previewElement.style.display = "block";
+        fileElement.parentNode.insertBefore(previewElement, fileElement);
+        
+        var fileReader = new FileReader();
+        
+        fileReader.onload = function(event) {
+            previewElement.src = event.target.result;
+        };
+        
+        fileElement.addEventListener("change", updateImagePreview, false);
+        updateImagePreview();
+        
+        function updateImagePreview() {
+            var file = fileElement.files[0];
+            if (file) {
+                fileReader.readAsDataURL(file);
+            } else {
+                var placeholderSrc = fileElement.getAttribute("data-placeholder");
+                if (placeholderSrc) {
+                    previewElement.src = placeholderSrc;
+                } else {
+                    previewElement.removeAttribute("src");
+                }
+            }
+        }
+    }
+);
+// function initWindow(elementId){
+//   var screen = document.querySelector("#" + elementId)
+//   screen.addEventListener("click", closeWindow(elementId));
+// }
+
+
+
+
+// function initIcon (elementName){
+//   var screen = document.querySelector("#" + elementName)
+//   addWindowTapHandling(screen)
+//   makeClosable(elementName)
+//   dragElement(screen)
+//   initializeIcon(elementName)
+// }
+
+

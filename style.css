@@ -1,6 +1,50 @@
+.bg{
+   background-color: honeydew;
+   background-image: url(myfile);
+}
+
 .headerButton::first-letter {
   text-decoration: underline;
 }
 .headerButton{
     cursor: pointer;
+    margin-top: 0; display: flex; align-items: center; min-height: 20px; margin-left: 10px;
+}
+.topbartext{
+  margin-top: 0; display: flex; align-items: center; min-height: 20px; margin-left: 10px;
+}
+
+.topbartextR{
+  margin-top: 0; display: flex; align-items: center; min-height: 20px; right: 30px;
+}
+
+.align-right{
+  margin-left: auto;
+}
+.topbar{
+  display: flex; justify-content:flex-start; gap: 10px; backdrop-filter:blur(40px); background-color: yellow; color: darksalmon; padding: 10px; height: 20px;
+}
+
+.window{
+  position: absolute; top: 50%; left:50%; transform: translate(-50%, -50%); border: solid; border-color: aquamarine; width: 700px; flex-direction:column;
+  border-radius: 5px;
+  background-color: honeydew;
+}
+.windowheader{
+  background-color: aquamarine;
+  margin-top: 0;
+  display: flex;
+  max-height: 40px;
+}
+
+.windowheadertext{
+  margin-top: 0; display: flex; align-items: center; min-height: 40px; margin-left: 10px; font-weight: bold; color:rgb(98, 36, 36);
+}
+
+.app{
+  text-align: center; margin: 8px; padding: 8px; filter: drop-shadow(0 0 8px black); width: fit-content; cursor: pointer;
+}
+
+.apptext{
+  margin: 0px; color: #fff;
 }
