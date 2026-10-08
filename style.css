@@ -22,7 +22,7 @@
   margin-left: auto;
 }
 .topbar{
-  display: flex; justify-content:flex-start; gap: 10px; backdrop-filter:blur(40px); background-color: rgb(149, 87, 87); color: aquamarine; padding: 10px; height: 20px;
+  display: flex; justify-content:flex-start; gap: 10px; backdrop-filter:blur(40px); background-color: rgb(149, 87, 87); color: aquamarine; padding: 10px; height: 20px; border-top-left-radius: 5px; border-top-right-radius: 5px;
 }
 
 .window{
@@ -57,6 +57,7 @@
 
 .app{
   text-align: center; margin: 8px; padding: 8px; filter: drop-shadow(0 0 8px pink); width: fit-content; cursor: pointer;
+  outline: #2980B9;
 }
 
 .apptext{

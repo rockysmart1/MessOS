@@ -34,8 +34,16 @@ welcomeScreenOpen.addEventListener("dblclick", function(){
   openWindow(welcomeScreen);
 });
 
+welcomeScreenOpen.addEventListener("click", function(){
+    
+});
+
+
 welcomeScreenClose.addEventListener("click", function(){
   closeWindow(welcomeScreen);
 });
 
+window.addEventListener("load", function(){
+    closeWindow(notes);
+});
 

@@ -9,6 +9,10 @@ function dragElement(element) {
   var currentX = 0;
   var currentY = 0;
 
+
+  var header = element.querySelector(".windowheader");
+  
+
   // Step 3: Check if there is a special header element associated with the draggable element.
   if (document.querySelector(".windowheader")) {
     // Step 4: If present, assign the `dragMouseDown` function to the header's `onmousedown` event.
@@ -29,11 +33,11 @@ function dragElement(element) {
     initialY = e.clientY;
     // Step 8: Set up event listeners for mouse movement (`elementDrag`) and mouse button release (`closeDragElement`).
     document.onmouseup = stopDragging;
-    document.onmousemove = dragElement;
+    document.onmousemove = moveElement;
   }
 
   // Step 9: Define the `elementDrag` function to calculate the new position of the element based on mouse movement.
-  function dragElement(e) {
+  function moveElement(e) {
     e = e || window.event;
     e.preventDefault();
     // Step 10: Calculate the new cursor position.
@@ -41,7 +45,7 @@ function dragElement(element) {
     currentY = initialY - e.clientY;
     initialX = e.clientX;
     initialY = e.clientY;
-
+    
     // Step 11: Update the element's new position by modifying its `top` and `left` CSS properties.
     element.style.top = (element.offsetTop - currentY) + "px";
     element.style.left = (element.offsetLeft - currentX) + "px";
