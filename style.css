@@ -22,11 +22,11 @@
   margin-left: auto;
 }
 .topbar{
-  display: flex; justify-content:flex-start; gap: 10px; backdrop-filter:blur(40px); background-color: greenyellow; color: darksalmon; padding: 10px; height: 20px;
+  display: flex; justify-content:flex-start; gap: 10px; backdrop-filter:blur(40px); background-color: rgb(149, 87, 87); color: aquamarine; padding: 10px; height: 20px;
 }
 
 .window{
-  position: absolute; top: 50%; left:50%; transform: translate(-50%, -50%); border: solid; border-color: aquamarine; width: 700px; flex-direction:column;
+  position: absolute;   top: 100px; left: 100px;  border: solid; border-color: aquamarine; width: 700px; flex-direction:column;
   border-radius: 5px;
   background-color: honeydew;
 }
@@ -40,22 +40,27 @@
 .windowheadertext{
   margin-top: 0; display: flex; align-items: center; min-height: 40px; margin-left: 10px;
   font-weight: bold;font-size: 25px; color:rgb(149, 87, 87);
+  cursor: default;
 }
 .windowheaderclose{
-  /* cursor: pointer; */
+  cursor: pointer;
   display: flex; align-items: center; color:rgb(149, 87, 87);
   font-size: 40px; margin-left: auto; line-height: 1px; position: relative; right: 5px;
   pointer-events: auto; z-index: 10;
-  cursor: pointer;
 
+
+}
+
+.windowheaderclose:hover {
+  color: rgb(176, 103, 103);
 }
 
 .app{
-  text-align: center; margin: 8px; padding: 8px; filter: drop-shadow(0 0 8px black); width: fit-content; cursor: pointer;
+  text-align: center; margin: 8px; padding: 8px; filter: drop-shadow(0 0 8px pink); width: fit-content; cursor: pointer;
 }
 
 .apptext{
-  margin: 0px; color: #fff;
+  margin: 0px; color: rgb(149, 87, 87);
 }
 
 
@@ -105,7 +110,3 @@
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
-
-.windowheaderclose:hover {
-  color: rgb(176, 103, 103);
-}

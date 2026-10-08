@@ -1,16 +1,3 @@
-function clock(){
-            const currentTime = new Date().toLocaleTimeString();
-            const currentDate = new Date().toLocaleDateString();
-            const month = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec"];
-
-            const d = new Date();
-            let name = month[d.getMonth()];
-            //const month = new Date.toLocaleDateString('default', { month: 'long' });
-            document.getElementById("dateDay").innerText = currentDate;
-            document.getElementById("dateName").innerText = name;
-            document.getElementById("dateTime").innerText = currentTime;
-            setTimeout(clock, 1000);
-          }
 
 dragElement(document.querySelector(".window"));
 
@@ -54,6 +41,7 @@ function dragElement(element) {
     currentY = initialY - e.clientY;
     initialX = e.clientX;
     initialY = e.clientY;
+
     // Step 11: Update the element's new position by modifying its `top` and `left` CSS properties.
     element.style.top = (element.offsetTop - currentY) + "px";
     element.style.left = (element.offsetLeft - currentX) + "px";
@@ -66,71 +54,31 @@ function dragElement(element) {
   }
 }
 
-function closeWindow(element) {
-  element.style.display = "none"
-}
 
-function openWindow(element) {
-  element.style.display = "flex"
-}
 
-// function initWindow(elementName){
-//   var screen = document.querySelector("#"+elementName)
-//   document.getElementById(elementName+"close").addEventListener("click", function(){
-//   closeWindow(screen);
-// });
 
-// }
-// initWindow(photo)
 
-// function test(elem){
-//   thing = document.getElementById(elem);
-//   thing.addEventListener("click", function(){
-//     thing.innerText = "works";
-//   });
+
+
+// /* When the user clicks on the button,
+// toggle between hiding and showing the dropdown content */
+// function myFunction() {
+//   document.getElementById("myDropdown").classList.toggle("show");
 // }
 
-// test(hello);
-var welcomeScreen = document.querySelector("#welcome")
-
-var welcomeScreenOpen = document.querySelector("#welcomeopen");
-var welcomeScreenClose = document.querySelector("#welcomeclose");
-
-
-welcomeScreenOpen.addEventListener("dblclick", function(){
-  openWindow(welcomeScreen);
-});
-
-welcomeScreenClose.addEventListener("click", function(){
-  closeWindow(welcomeScreen);
-});
-
-
-
-
-
-
-
-
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
+// // Close the dropdown menu if the user clicks outside of it
+// window.onclick = function(event) {
+//   if (!event.target.matches('.dropbtn')) {
+//     var dropdowns = document.getElementsByClassName("dropdown-content");
+//     var i;
+//     for (i = 0; i < dropdowns.length; i++) {
+//       var openDropdown = dropdowns[i];
+//       if (openDropdown.classList.contains('show')) {
+//         openDropdown.classList.remove('show');
+//       }
+//     }
+//   }
+// }
 
 
 // function initWindow(elementId){
