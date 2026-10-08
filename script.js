@@ -93,52 +93,46 @@ function openWindow(element) {
 // test(hello);
 var welcomeScreen = document.querySelector("#welcome")
 
+var welcomeScreenOpen = document.querySelector("#welcomeopen");
+var welcomeScreenClose = document.querySelector("#welcomeclose");
 
-var welcomeScreenClose = document.querySelector("#welcomeclose")
-var welcomeScreenOpen = document.querySelector("#welcomeopen")
-// var welcomeScreenOpen = document.querySelectorAll()
+
+welcomeScreenOpen.addEventListener("dblclick", function(){
+  openWindow(welcomeScreen);
+});
 
 welcomeScreenClose.addEventListener("click", function(){
   closeWindow(welcomeScreen);
 });
 
-welcomeScreenOpen.addEventListener("click", function(){
-  openWindow(welcomeScreen);
-});
 
 
 
-Array.prototype.forEach.call(
-    document.getElementsByClassName("upload-image"),
-    function(fileElement) {
-        var previewElement = document.createElement("img");
-        previewElement.style.display = "block";
-        fileElement.parentNode.insertBefore(previewElement, fileElement);
-        
-        var fileReader = new FileReader();
-        
-        fileReader.onload = function(event) {
-            previewElement.src = event.target.result;
-        };
-        
-        fileElement.addEventListener("change", updateImagePreview, false);
-        updateImagePreview();
-        
-        function updateImagePreview() {
-            var file = fileElement.files[0];
-            if (file) {
-                fileReader.readAsDataURL(file);
-            } else {
-                var placeholderSrc = fileElement.getAttribute("data-placeholder");
-                if (placeholderSrc) {
-                    previewElement.src = placeholderSrc;
-                } else {
-                    previewElement.removeAttribute("src");
-                }
-            }
-        }
+
+
+
+
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
     }
-);
+  }
+}
+
+
 // function initWindow(elementId){
 //   var screen = document.querySelector("#" + elementId)
 //   screen.addEventListener("click", closeWindow(elementId));

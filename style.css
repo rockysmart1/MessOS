@@ -15,14 +15,14 @@
 }
 
 .topbartextR{
-  margin-top: 0; display: flex; align-items: center; min-height: 20px; right: 30px;
+  margin-top: 0; display: flex; align-items: center; min-height: 20px; margin-left: 10px; justify-content: space-evenly;
 }
 
-.align-right{
+#dateday{
   margin-left: auto;
 }
 .topbar{
-  display: flex; justify-content:flex-start; gap: 10px; backdrop-filter:blur(40px); background-color: yellow; color: darksalmon; padding: 10px; height: 20px;
+  display: flex; justify-content:flex-start; gap: 10px; backdrop-filter:blur(40px); background-color: greenyellow; color: darksalmon; padding: 10px; height: 20px;
 }
 
 .window{
@@ -38,7 +38,16 @@
 }
 
 .windowheadertext{
-  margin-top: 0; display: flex; align-items: center; min-height: 40px; margin-left: 10px; font-weight: bold; color:rgb(98, 36, 36);
+  margin-top: 0; display: flex; align-items: center; min-height: 40px; margin-left: 10px;
+  font-weight: bold;font-size: 25px; color:rgb(149, 87, 87);
+}
+.windowheaderclose{
+  /* cursor: pointer; */
+  display: flex; align-items: center; color:rgb(149, 87, 87);
+  font-size: 40px; margin-left: auto; line-height: 1px; position: relative; right: 5px;
+  pointer-events: auto; z-index: 10;
+  cursor: pointer;
+
 }
 
 .app{
@@ -47,4 +56,56 @@
 
 .apptext{
   margin: 0px; color: #fff;
+}
+
+
+
+
+
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+.windowheaderclose:hover {
+  color: rgb(176, 103, 103);
 }
