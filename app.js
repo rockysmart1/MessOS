@@ -1,3 +1,4 @@
+onload = closeWindow(notes);
 
 function closeWindow(element) {
   element.style.display = "none"
@@ -35,7 +36,7 @@ welcomeScreenOpen.addEventListener("dblclick", function(){
 });
 
 welcomeScreenOpen.addEventListener("click", function(){
-    
+
 });
 
 
@@ -44,6 +45,16 @@ welcomeScreenClose.addEventListener("click", function(){
 });
 
 window.addEventListener("load", function(){
-    closeWindow(notes);
+    
 });
 
+
+function initializeIcon(name) {
+    var icon = document.querySelector("#" + name + "Icon")
+    var screen = document.querySelector("#" + name)
+    icon.addEventListener("dblclick", () => openWindow(screen));
+
+    var close = document.querySelector("#" + name + "close")
+    close.addEventListener("click",()=>closeWindow(screen))
+}
+initializeIcon("notes")

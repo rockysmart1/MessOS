@@ -22,13 +22,18 @@
       <p class = "apptext">Life.png</p>
     </div>
 
+    <div id = "notesopen" class = "app" style="position: absolute; margin: 0; position: relative; left: 100px;">
+      <img id = "notesIcon" src="angelplush.jpg" style="width: 64px; height: 64px; border-radius: 16px;">
+      <p class = "apptext">Notes.png</p>
+    </div>
+
   <div class = "window" id = "welcome">
       <div class = "windowheader"> 
         <p class = "windowheadertext">Welcome</p>
         <span class = "windowheaderclose" id = "welcomeclose">&#xD7</span>
       </div>
 <!-- &#9632 -->
-      <div style = "padding: 10px;">
+      <div class = "windowcontent">
 
         <h1 style = "color: pink; filter: drop-shadow(0 0 20px rgb(185, 67, 67));">Welcome to MessOS!</h1>
         <img style = "height: 50%; width: 50%; border-radius: 5px;" src = "angelplush.jpg"/>
@@ -38,9 +43,13 @@
 
   <div class = "window" id = "notes">
     <div class = "windowheader">
-      <p class = "windowheadertext">HELlo</p>
+      <p class = "windowheadertext">Notes</p>
         <span class = "windowheaderclose" id = "notesclose">&#xD7</span>
     </div>
+    <div class ="windowcontent"> 
+      <textarea rows="4" cols="82" id = "notesinput"></textarea>
+    </div>
+
   </div>
 
   
@@ -53,6 +62,6 @@
 
 <script src = "app.js"></script>
 <script src = "clock.js"></script>
-<script src = "OGdrag.js"></script>
+<script src = "dragTMP.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css" />
 </body>

@@ -1,6 +1,8 @@
 .bg{
    background-color: honeydew;
    background-image: url(myfile);
+   font-family: monospace;
+   scrollbar-highlight-color: pink;
 }
 
 .headerButton::first-letter {
@@ -50,6 +52,9 @@
 
 
 }
+.windowcontent{
+  padding: 10px;
+}
 
 .windowheaderclose:hover {
   color: rgb(176, 103, 103);
@@ -57,7 +62,7 @@
 
 .app{
   text-align: center; margin: 8px; padding: 8px; filter: drop-shadow(0 0 8px pink); width: fit-content; cursor: pointer;
-  outline: #2980B9;
+  
 }
 
 .apptext{
@@ -111,3 +116,19 @@
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
+
+
+#notesinput{
+  height: auto; padding: 8px,12px; width: 100%;
+  resize: vertical;
+  /* field-sizing: content; */
+  border-color: rgb(149, 87, 87);
+  color: rgb(176, 103, 103);
+
+}
+
+#notesinput:focus {border-color: rgb(176, 103, 103); outline: none;}
+
+::selection{
+  background-color: rgb(254, 241, 243);
+}
