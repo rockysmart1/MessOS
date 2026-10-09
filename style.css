@@ -130,5 +130,6 @@
 #notesinput:focus {border-color: rgb(176, 103, 103); outline: none;}
 
 ::selection{
-  background-color: rgb(254, 241, 243);
+  background-color: rgba(79, 222, 189, 0.3);
+
 }

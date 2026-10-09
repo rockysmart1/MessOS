@@ -1,9 +1,9 @@
 <body onload = clock() class="bg" >
    
   <div class = "topbar">
-    <p class = "topbartext" style="cursor: pointer;"">MessOS</p>
+    <p class = "topbartext" style= "cursor: pointer;">MessOS</p>
 
-    <p class="headerButton" class = "dropbtn" >File</p> 
+    <p class="headerButton" >File</p> 
 
 
     <p class="headerButton">Edit</p>
@@ -17,28 +17,26 @@
     <p class = "topbartextR" id ="dateTime"></p>
   </div>
 
-   <div id = "welcomeopen" class = "app" style="position: absolute; margin: 0;">
-      <img src="angelplush.jpg" style="width: 64px; height: 64px; border-radius: 16px;">
-      <p class = "apptext">Life.png</p>
-    </div>
+  <div id = "welcomeopen" class = "app" style="position: absolute; margin: 0;">
+    <img src="angelplush.jpg" style="width: 64px; height: 64px; border-radius: 16px;">
+    <p class = "apptext">Life.png</p>
+  </div>
 
-    <div id = "notesopen" class = "app" style="position: absolute; margin: 0; position: relative; left: 100px;">
-      <img id = "notesIcon" src="angelplush.jpg" style="width: 64px; height: 64px; border-radius: 16px;">
-      <p class = "apptext">Notes.png</p>
-    </div>
+  <div id = "notesopen" class = "app" style="position: absolute; margin: 0; position: relative; left: 100px;">
+    <img id = "notesIcon" src="angelplush.jpg" style="width: 64px; height: 64px; border-radius: 16px;">
+    <p class = "apptext">Notes.png</p>
+  </div>
 
   <div class = "window" id = "welcome">
       <div class = "windowheader"> 
         <p class = "windowheadertext">Welcome</p>
         <span class = "windowheaderclose" id = "welcomeclose">&#xD7</span>
       </div>
-<!-- &#9632 -->
-      <div class = "windowcontent">
 
+      <div class = "windowcontent">
         <h1 style = "color: pink; filter: drop-shadow(0 0 20px rgb(185, 67, 67));">Welcome to MessOS!</h1>
         <img style = "height: 50%; width: 50%; border-radius: 5px;" src = "angelplush.jpg"/>
       </div>
-        
   </div>
 
   <div class = "window" id = "notes">
@@ -46,19 +44,11 @@
       <p class = "windowheadertext">Notes</p>
         <span class = "windowheaderclose" id = "notesclose">&#xD7</span>
     </div>
+
     <div class ="windowcontent"> 
       <textarea rows="4" cols="82" id = "notesinput"></textarea>
     </div>
-
-  </div>
-
-  
-
-    
-<!-- <form>
-  <label for="myfile">Select a file:</label>
-  <input type="file" id="myfile" name="myfile">
-</form> -->
+</div>
 
 <script src = "app.js"></script>
 <script src = "clock.js"></script>

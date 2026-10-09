@@ -11,3 +11,4 @@ function clock(){
             document.getElementById("dateTime").innerText = currentTime;
             setTimeout(clock, 1000);
           }
+window.addEventListener("DOMContentLoaded", clock);
