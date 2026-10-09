@@ -36,8 +36,17 @@ welcomeScreenOpen.addEventListener("dblclick", function(){
 });
 
 welcomeScreenOpen.addEventListener("click", function(){
-
+    
 });
+
+// const apps = document.querySelectorAll(".app");
+
+// apps.forEach(function(item){
+//     item.addEventListener("click", ()=>{
+//         item.classList.toggle("active-state");
+//         item.focus();
+//     })
+// });
 
 
 welcomeScreenClose.addEventListener("click", function(){
@@ -58,3 +67,5 @@ function initializeIcon(name) {
     close.addEventListener("click",()=>closeWindow(screen))
 }
 initializeIcon("notes")
+
+

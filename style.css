@@ -1,3 +1,7 @@
+:root{
+  --Cbrown: rgb(149, 87, 87);
+}
+
 .bg{
    background-color: honeydew;
    background-image: url(myfile);
@@ -66,11 +70,19 @@
 }
 
 .apptext{
-  margin: 0px; color: rgb(149, 87, 87);
+  margin: 3px; color: rgb(149, 87, 87);
 }
 
+/* .app.active-state{
+  outline-color: #714b4b; outline-width: 4px; 
+  outline-style: solid; 
+}
 
-
+/* .app:focus{
+  outline-color: #714b4b; outline-width: 4px; 
+  outline-style: solid; 
+} */
+ */
 
 
 .dropbtn {
