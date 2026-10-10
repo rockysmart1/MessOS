@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monaco Editor Simple Setup</title>
+    <!-- Define the height and width of your editor container -->
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: sans-serif;
+            background-color: #1e1e1e;
+            color: #fff;
+        }
+        #editor-container {
+            width: 100%;
+            height: 500px;
+            border: 1px solid #444;
+        }
+    </style>
+    <!-- 1. Load the AMD Loader from cdnjs -->
+    <script src="https://cloudflare.com"></script>
+</head>
+<body>
+
+    <h2>Monaco Editor (HTML/JS/CSS)</h2>
+    <!-- 2. The DOM element where the editor will live -->
+    <div id="editor-container"></div>
+
+    <script>
+        // 3. Configure the loader to find Monaco's source files
+        require.config({ paths: { vs: 'https://cloudflare.com' } });
+
+        // 4. Initialize the editor inside the callback
+        require(['vs/editor/editor.main'], function () {
+            const editor = monaco.editor.create(document.getElementById('editor-container'), {
+                value: [
+                    'function helloWorld() {',
+                    '\tconsole.log("Hello from Monaco Editor!");',
+                    '}'
+                ].join('\n'),
+                language: 'javascript',
+                theme: 'vs-dark', // Options: 'vs', 'vs-dark', 'hc-black'
+                automaticLayout: true // Resizes the editor automatically if the container changes size
+            });
+
+            // Example: How to get the code from the editor
+            // console.log(editor.getValue());
+        });
+    </script>
+</body>
+</html>

@@ -40,7 +40,7 @@ function dragElement(element) {
     e = e || window.event;
     e.preventDefault();
 
-    var topBarHeight = 40; 
+    var topBarHeight = 50; 
     
     // Calculate new position based on where the pointer is relative to the screen
     var newLeft = e.clientX - offsetX;
