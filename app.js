@@ -67,5 +67,5 @@ function initializeIcon(name) {
     close.addEventListener("click",()=>closeWindow(screen))
 }
 initializeIcon("notes")
-
+initializeIcon("spotify")
 
