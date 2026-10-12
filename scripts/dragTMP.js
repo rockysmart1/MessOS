@@ -21,7 +21,7 @@ function dragElement(element) {
     });
   }
 
-    if (element.querySelector == ".app"){
+    if (element.isApp){
         element.addEventListener("click", function(){
             element.style.zIndex = 10;
             console.log("selected app. put zIndez 10");
