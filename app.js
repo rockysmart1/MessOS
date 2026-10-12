@@ -57,15 +57,23 @@ window.addEventListener("load", function(){
     
 });
 
-
+let highestZ = 10;
 function initializeIcon(name) {
     var icon = document.querySelector("#" + name + "Icon")
     var screen = document.querySelector("#" + name)
-    icon.addEventListener("dblclick", () => openWindow(screen));
+    icon.addEventListener("dblclick", function() {
+        openWindow(screen);
+        screen.style.zIndex = Math.floor(Date.now() / 1000);
+    }
+        
+);
 
     var close = document.querySelector("#" + name + "close")
     close.addEventListener("click",()=>closeWindow(screen))
+
 }
 initializeIcon("notes")
 initializeIcon("spotify")
 
+
+// element.style.zIndex = Math.floor(Date.now() / 1000);

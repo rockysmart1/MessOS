@@ -10,27 +10,41 @@ function dragElement(element) {
     element.onmousedown = startDragging;
   }
 
-  function startDragging(e) {
-    if (e.target.classList.contains("windowheaderclose") || e.target.id.includes("close")) {
-      return;
+    element.addEventListener("mousedown", (e) => {
+        if (header && header.contains(e.target)) return; 
+        bringToFront(element);
+    });
+
+    element.addEventListener("mousedown", (e) => {
+        bringToFront(element);
+    });
+
+    
+    function bringToFront(el) {
+        element.style.zIndex = Math.floor(Date.now() / 1000);
     }
+
+    function startDragging(e) {
+        if (e.target.classList.contains("windowheaderclose") || e.target.id.includes("close")) {
+            return;
+        }
 
     e = e || window.event;
     e.preventDefault();
 
-    // 1. Force the element out of any flexbox flow by setting strict positions
+
     element.style.position = "absolute";
 
-    // 2. Clear out CSS centering tricks instantly before math happens
+
     element.style.transform = "none"; 
     element.style.margin = "0px";
 
-    // 3. Calculate EXACT distance between mouse pointer and top-left corner of the item
+
     var rect = element.getBoundingClientRect();
     offsetX = e.clientX - rect.left;
     offsetY = e.clientY - rect.top;
 
-    element.style.zIndex = Math.floor(Date.now() / 1000);
+    // element.style.zIndex = Math.floor(Date.now() / 1000);
 
     document.onmouseup = stopDragging;
     document.onmousemove = moveElement;
