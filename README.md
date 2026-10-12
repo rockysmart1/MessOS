@@ -8,8 +8,10 @@ A Personal web OS made for Hackclub with draggable windows and apps, inspired by
 Features:
 - Welcome page
 - Notes app: Write simple text
+- Spotify
 - Clock and date
 - Draggable windows and apps
+- Resizable windows
 - Ability to open and close apps
 
 Credits: 

@@ -3,13 +3,14 @@ function dragElement(element) {
   var offsetY = 0;
 
   var header = element.querySelector(".windowheader");
-  
+  var isApp = element.matches(".app");
+
   if (header) {
     header.onmousedown = startDragging;
   } else {
     element.onmousedown = startDragging;
   }
-
+  if (element.querySelector != ".app"){
     element.addEventListener("mousedown", (e) => {
         if (header && header.contains(e.target)) return; 
         bringToFront(element);
@@ -18,10 +19,26 @@ function dragElement(element) {
     element.addEventListener("mousedown", (e) => {
         bringToFront(element);
     });
+  }
+
+    if (element.querySelector == ".app"){
+        element.addEventListener("click", function(){
+            element.style.zIndex = 10;
+            console.log("selected app. put zIndez 10");
+        });
+        
+    }
+    
 
     
     function bringToFront(el) {
-        element.style.zIndex = Math.floor(Date.now() / 1000);
+        if(isApp){
+            element.style.zIndex = 1;
+        }
+        else{
+            element.style.zIndex = Math.floor(Date.now() / 1000);
+        }
+        
     }
 
     function startDragging(e) {
@@ -38,7 +55,10 @@ function dragElement(element) {
 
     element.style.transform = "none"; 
     element.style.margin = "0px";
-
+    if(isApp){
+        element.style.opacity = "0.75";
+    }
+    
 
     var rect = element.getBoundingClientRect();
     offsetX = e.clientX - rect.left;
@@ -77,8 +97,20 @@ function dragElement(element) {
   function stopDragging() {
     document.onmouseup = null;
     document.onmousemove = null;
+    if(isApp){
+        element.style.opacity = "1";
+    }
+    
+
+    if (element.querySelector == ".app"){
+
+        element.style.zIndex = 7;
+        console.log("selected app. put zIndez 10");
+    }
+        
+    }
   }
-}
+
 
 document.querySelectorAll(".window").forEach(windowElement => {
   dragElement(windowElement);

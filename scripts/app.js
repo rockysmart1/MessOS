@@ -25,6 +25,8 @@ function openWindow(element) {
 // }
 
 // test(hello);
+
+
 var welcomeScreen = document.querySelector("#welcome")
 
 var welcomeScreenOpen = document.querySelector("#welcomeopen");
@@ -33,11 +35,10 @@ var welcomeScreenClose = document.querySelector("#welcomeclose");
 
 welcomeScreenOpen.addEventListener("dblclick", function(){
   openWindow(welcomeScreen);
+  welcomeScreen.style.zIndex = Math.floor(Date.now() / 1000);
 });
 
-welcomeScreenOpen.addEventListener("click", function(){
-    
-});
+
 
 // const apps = document.querySelectorAll(".app");
 
